@@ -11,7 +11,7 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, { cors: { origin: "*" } });
 
-mongoose.connect(process.env.MONGO_URI).then(() => console.log("MongoDB connected"));
+mongoose.connect(process.env.DB_URL).then(() => console.log("MongoDB connected"));
 
 app.use(cors());
 app.use(express.json());
